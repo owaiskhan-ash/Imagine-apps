@@ -31,7 +31,7 @@ if (!location.hash) window.addEventListener('pageshow', () => window.scrollTo({t
 <meta name="twitter:image:alt" content="Your idea, made real. Apps and websites, imagined together, beside an illustrated app dashboard.">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Imagine","url":"https://imagine.justsimpleapps.online/","description":"Turn your idea into an app or website with maintenance plans covering domain and hosting."}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@700;800&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 /* Theme */
 :root{--canvas:#f5eee7;--ink:#382a25;--muted:#75665e;--navy:#422a20;--navy2:#261b19;--orange:#ff6200;--orange-bright:#ff8a1e;--line:rgba(255,255,255,.6);--light:rgba(255,255,255,.9);--shadow:rgba(196,169,150,.48);--raised:-6px -6px 12px var(--light),6px 6px 12px var(--shadow);--inset:inset -5px -5px 10px rgba(255,255,255,.75),inset 5px 5px 10px rgba(163,177,198,.45);--radius:24px;--glass:rgba(255,255,255,.08)}
@@ -110,11 +110,11 @@ header{height:100px;display:flex;align-items:center;justify-content:space-betwee
 .splash{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;overflow:hidden;background:#ff6b00;pointer-events:none;animation:splash-exit .85s cubic-bezier(.76,0,.24,1) 1.8s forwards}
 .splash:before,.splash:after{content:'';position:absolute;width:min(60vw,650px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(255,222,179,.28),transparent 67%);filter:blur(16px);animation:splash-drift 2.5s ease-in-out both}
 .splash:before{left:-12%;top:-25%}.splash:after{right:-12%;bottom:-35%;animation-direction:reverse}
-.splash-word{position:relative;z-index:1;display:flex;align-items:baseline;font:800 clamp(58px,12vw,132px)/1 Commissioner,sans-serif;letter-spacing:-.075em;color:#1d1917}
+.splash-word{position:relative;z-index:1;display:flex;align-items:baseline;font:400 clamp(58px,12vw,132px)/1 Commissioner,sans-serif;letter-spacing:-.075em;color:#1d1917}
 .splash-word span{display:inline-block;opacity:0;filter:blur(12px);transform:translateY(18px) scale(.96);animation:splash-letter .8s cubic-bezier(.22,1,.36,1) forwards;animation-delay:calc(.12s + var(--i) * .085s)}
 .splash-word .splash-dot{color:#fff;letter-spacing:0}
 /* Separate the two i dots so they can follow the brand's accent color. */
-.brand .wordmark{font:800 1em/1 Commissioner,sans-serif;letter-spacing:-.06em;color:#1d1917;white-space:nowrap}
+.brand .wordmark{font:400 1em/1 Commissioner,sans-serif;letter-spacing:-.06em;color:#1d1917;white-space:nowrap}
 .brand .wordmark-i,.splash-word .wordmark-i{position:relative;display:inline-block;font-style:normal;letter-spacing:0}
 .brand .wordmark-i:before,.splash-word .wordmark-i:before{content:'';position:absolute;top:.12em;left:50%;transform:translateX(-50%);width:.14em;height:.14em;border-radius:50%;background:#ff6200}
 .brand .wordmark-dot{color:#ff6200}
