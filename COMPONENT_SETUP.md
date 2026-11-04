@@ -1,0 +1,7 @@
+# React component setup
+
+The landing page is currently a self-contained `index.html`, not a React, Tailwind, or shadcn project. Its styles live in the `<style>` element; it has no existing component directory. The live “Let's make it” button uses a dependency-free CSS equivalent of `components/ui/flow-button.tsx` so the landing page still works without a build step. The React component accepts an optional `text` prop and needs no providers, hooks, or image assets. It uses `lucide-react` for its arrows.
+
+The component and demo are in `components/ui`, the conventional shadcn UI component location. Keeping shared UI primitives there makes shadcn-generated imports predictable and keeps reusable components separate from application screens.
+
+To use them in a React app, set up a React/TypeScript project (for example, `npm create vite@latest my-app -- --template react-ts`), install Tailwind using the current Vite guide at https://tailwindcss.com/docs/installation/using-vite, and initialize shadcn with `npx shadcn@latest init` from that app's root. Select `components/ui` as the component location and your Tailwind stylesheet (commonly `src/index.css`) as the global CSS file. Copy the files into that location, install `lucide-react`, and configure the `@` alias if using imports such as `@/components/ui/flow-button`. The included demo uses a relative import and needs no alias.
