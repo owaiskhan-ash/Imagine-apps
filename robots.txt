@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://imagine-apps.vercel.app/sitemap.xml
+Sitemap: https://imagine.justsimpleapps.online/sitemap.xml
