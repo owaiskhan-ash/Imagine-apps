@@ -14,9 +14,11 @@ Then visit `http://localhost:3000`. The landing page needs no build step; its st
 
 ## Project files
 
-- `index.html` — landing page, styles and interactions.
-- `components/ui/` — optional React Flow Button and demo.
-- [COMPONENT_SETUP.md](COMPONENT_SETUP.md) — React, Tailwind and shadcn setup notes.
-- `LICENSE` — project license.
+- `index.html` - landing page, styles and interactions.
+- `components/ui/` - optional React Flow Button and demo.
+- [COMPONENT_SETUP.md](COMPONENT_SETUP.md) - React, Tailwind and shadcn setup notes.
+- `LICENSE` - project license.
 
 To change the WhatsApp recipient, update the `wa.me` number in `index.html` using the international format without `+` or spaces. The visitor reviews and sends the message in WhatsApp.
+
+The canonical URL, social metadata, `robots.txt` and `sitemap.xml` use `https://imagine-apps.vercel.app/`. Update them if the production domain changes.
