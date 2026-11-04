@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://imagine.justsimpleapps.online/</loc>
-  </url>
+  <url><loc>https://imagine.justsimpleapps.online/</loc></url>
+  <url><loc>https://imagine.justsimpleapps.online/case-studies/poppyblue-pos/</loc></url>
+  <url><loc>https://imagine.justsimpleapps.online/case-studies/ghost/</loc></url>
+  <url><loc>https://imagine.justsimpleapps.online/case-studies/faster-downloads/</loc></url>
+  <url><loc>https://imagine.justsimpleapps.online/case-studies/foodinn-pos/</loc></url>
 </urlset>
