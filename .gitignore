@@ -1,1 +1,12 @@
+# Dependencies and generated files
 node_modules/
+dist/
+build/
+coverage/
+
+# Local environment and editor files
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log
