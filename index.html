@@ -156,6 +156,11 @@ header .brand:is(:hover,:focus-visible) .logo-inverted{opacity:1;filter:blur(0)}
 @media(min-width:851px){.faq-heading{margin-left:auto;margin-right:auto;text-align:center}.faq-list{margin-left:auto;margin-right:auto}}
 @media(max-width:480px){.faq-section{padding:55px 6vw}}
 @media(prefers-reduced-motion:reduce){.faq-list details{transition:none}}
+/* A brief glint moves over the logo without moving the logo itself. */
+header .brand-mark{overflow:hidden;border-radius:10px}
+header .brand-mark::after{content:'';position:absolute;inset:-25% -45%;z-index:2;pointer-events:none;background:linear-gradient(110deg,transparent 40%,rgba(255,255,255,.75) 50%,transparent 60%);opacity:0;transform:translateX(-110%);transition:transform 850ms ease,opacity 300ms ease}
+header .brand:is(:hover,:focus-visible) .brand-mark::after{opacity:.85;transform:translateX(110%)}
+@media(prefers-reduced-motion:reduce){header .brand-mark::after{display:none}}
 </style>
 </head>
 <body>
@@ -192,6 +197,27 @@ document.addEventListener('keydown',event=>{if(event.key==='Tab')document.docume
 // Prompt suggestions and WhatsApp handoff.
 const idea=document.querySelector('#idea'), message=document.querySelector('#message');
 const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+// Preserve native details semantics, with a reversible height transition when motion is allowed.
+document.querySelectorAll('.faq-list details').forEach(details=>{
+  const summary=details.querySelector('summary');
+  let animation=null, closing=false;
+  summary.addEventListener('click',event=>{
+    if(reducedMotion.matches || typeof details.animate!=='function')return;
+    event.preventDefault();
+    const start=details.getBoundingClientRect().height;
+    const shouldOpen=!details.open || closing;
+    if(animation){animation.cancel();animation=null}
+    details.style.overflow='hidden';
+    details.style.height='';
+    details.open=false;
+    const collapsed=details.getBoundingClientRect().height;
+    details.open=true;
+    const expanded=details.getBoundingClientRect().height;
+    closing=!shouldOpen;
+    animation=details.animate([{height:start+'px'},{height:(shouldOpen?expanded:collapsed)+'px'}],{duration:320,easing:'ease-in-out'});
+    animation.onfinish=()=>{details.open=shouldOpen;details.style.height='';details.style.overflow='';animation=null;closing=false};
+  });
+});
 let typingTimer, pendingSuggestion='';
 function stopTyping(){clearInterval(typingTimer);typingTimer=null;pendingSuggestion=''}
 idea.addEventListener('input',stopTyping);
